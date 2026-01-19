@@ -1,0 +1,114 @@
+:root {
+    --brand-dark: #0f172a;
+    --brand-accent: #6366f1;
+    --bg-soft: #f8fafc;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    color: var(--brand-dark);
+    scroll-behavior: smooth;
+}
+
+/* Unique Navbar */
+.navbar {
+    backdrop-filter: blur(15px);
+    background: rgba(255, 255, 255, 0.8);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Sections */
+section {
+    padding: 100px 0;
+}
+
+.hero-gradient {
+    background: radial-gradient(circle at top right, #ffffff 0%, #e2e8f0 100%);
+    padding-top: 160px;
+}
+
+/* About Section Design */
+.about-box {
+    background: var(--brand-dark);
+    color: white;
+    border-radius: 40px;
+    padding: 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-circle {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: var(--brand-accent);
+    filter: blur(80px);
+    opacity: 0.2;
+    top: -50px;
+    right: -50px;
+}
+
+/* Form Styling */
+.contact-card {
+    border: none;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+    padding: 40px;
+}
+
+.form-control {
+    border: 1px solid #e2e8f0;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+    border-color: var(--brand-accent);
+}
+
+/* Sticky Purchase Bar */
+.purchase-bar {
+    position: fixed;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 450px;
+    background: var(--brand-dark);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.btn-brand {
+    background: var(--brand-accent);
+    color: white;
+    border-radius: 100px;
+    padding: 8px 24px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-brand:hover {
+    background: #4f46e5;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: 60px 0;
+    }
+
+    .about-box {
+        padding: 30px;
+        border-radius: 20px;
+    }
+}

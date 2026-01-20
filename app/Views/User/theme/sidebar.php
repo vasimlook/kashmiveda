@@ -37,6 +37,12 @@
                         </a>
                     </li>
                     <li class="nk-menu-item">
+                        <a href="<?= url_to('user_withdrawal') ?>" class="nk-menu-link">
+                            <span class="nk-menu-icon"><em class="icon ni ni-book-read"></em></span>
+                            <span class="nk-menu-text">Withdrawal</span>
+                        </a>
+                    </li>
+                    <li class="nk-menu-item">
                         <a href="<?= url_to('user_change_password') ?>" class="nk-menu-link">
                             <span class="nk-menu-icon"><em class="icon ni ni-lock"></em></span>
                             <span class="nk-menu-text">Change Password</span>

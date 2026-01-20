@@ -9,12 +9,14 @@ use App\Libraries\SmsLibrary;
 
 class Auth extends BaseController
 {
-    public function register()
+    public function register($referralCode = null)
     {
         if (session()->get('isUserLoggedIn')) {
             return redirect()->to('user/dashboard');
         }
-        return view('User/Auth/register');
+        $data['referralCode'] = $referralCode;
+
+        return view('User/Auth/register',$data);
     }
 
     public function registerProcess()

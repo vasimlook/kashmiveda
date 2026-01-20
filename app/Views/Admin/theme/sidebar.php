@@ -31,6 +31,12 @@
                         </a>
                     </li>
                     <li class="nk-menu-item">
+                        <a href="<?= url_to('admin_withdrawal_request') ?>" class="nk-menu-link">
+                            <span class="nk-menu-icon"><em class="icon ni ni-briefcase"></em></span>
+                            <span class="nk-menu-text">Withdrawal Request</span>
+                        </a>
+                    </li>
+                    <li class="nk-menu-item">
                         <a href="<?= url_to('admin_contact_inquiry_list') ?>" class="nk-menu-link">
                             <span class="nk-menu-icon"><em class="icon ni ni-contact"></em></span>
                             <span class="nk-menu-text">Contact Us Inquiry</span>

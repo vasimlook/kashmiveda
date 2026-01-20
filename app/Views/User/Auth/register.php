@@ -93,7 +93,7 @@
                                             <label class="form-label" for="default-01">Referral Code (Optional)</label>
                                         </div>
                                         <div class="form-control-wrap">
-                                            <input type="text" class="form-control form-control-lg" id="default-01" placeholder="Enter your referral code" name="referral_code" value="<?= old('referral_code') ?>">
+                                            <input type="text" class="form-control form-control-lg" id="default-01" placeholder="Enter your referral code" name="referral_code" value="<?= old('referral_code',$referralCode) ?>">
                                             <?php if (session('errors.referral_code')) : ?>
                                                 <span class="error">
                                                     <?= session('errors.referral_code') ?>

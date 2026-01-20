@@ -75,4 +75,24 @@ class UserModel extends Model
     {
         return $this->where('uuid', $uuid)->first();
     }
+
+    public function updateBalance(int $userId, float $amount, bool $isIncrement = true, string $column = 'balance')
+    {
+        if ($userId <= 0 || $amount <= 0)
+            return false;
+
+        $builder = $this->db->table('users');
+        $builder->where('id', $userId);
+
+        if ($isIncrement) {
+            $builder->set($column, "$column + $amount", false);
+        } else {
+            $builder->where("$column >=", $amount);
+            $builder->set($column, "$column - $amount", false);
+        }
+
+        $builder->update();
+
+        return $this->db->affectedRows() > 0;
+    }
 }

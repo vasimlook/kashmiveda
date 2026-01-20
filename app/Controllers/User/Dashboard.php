@@ -10,7 +10,11 @@ class Dashboard extends BaseController
 {
     public function index()
     {
-        return view('User/dashboard');
+        $userModel = new UserModel();
+        $userId = session()->get('user_id');
+        $data['user'] = $userModel->where('id', $userId)->first();
+        
+        return view('User/dashboard',$data);
     }
 
     public function bankDetail()

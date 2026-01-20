@@ -26,10 +26,14 @@ $routes->group('admin', ['filter' => 'adminAuth'], function ($routes) {
     $routes->post('user-team-level-wise', 'Admin\User::teamListLevelWise', ['as' => 'admin_user_team_level_wise']);
     
     $routes->get('contact-inquiry', 'Admin\Dashboard::contactInquiryList', ['as' => 'admin_contact_inquiry_list']);
+
+    $routes->get('withdrawal-request', 'Admin\Withdrawal::index', ['as' => 'admin_withdrawal_request']);
+    $routes->get('accept-reject-withdrawal-request/(:num)/(:num)', 'Admin\Withdrawal::acceptRejectWithdrawal/$1/$2', ['as' => 'admin_accept_reject_withdrawal_request']);
 });
 
 
 $routes->group('user', function ($routes) {
+    $routes->get('register/(:any)', 'User\Auth::register/$1', ['as' => 'user_register_ref']);
     $routes->get('register', 'User\Auth::register', ['as' => 'user_register']);
     $routes->post('registerProcess', 'User\Auth::registerProcess', ['as' => 'user_register_process']);
     $routes->match(['get', 'post'], 'verify-otp/(:any)', 'User\Auth::verifyOtp/$1', ['as' => 'user_verify_otp']);
@@ -50,5 +54,8 @@ $routes->group('user', ['filter' => 'userAuth'], function ($routes) {
     
     $routes->get('my-team', 'User\MyTeam::index',['as' => 'user_my_team']);
     $routes->match(['get', 'post'], 'bank-detail', 'User\Dashboard::bankDetail', ['as' => 'user_bank_detail']);
+
+    $routes->match(['get', 'post'], 'withdrawal', 'User\Withdrawal::index', ['as' => 'user_withdrawal']);
+    $routes->get('withdrawal-history', 'User\Withdrawal::withdrawalHistoryList',['as' => 'user_withdrawal_history_list']);
 });
 

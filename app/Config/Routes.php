@@ -29,6 +29,11 @@ $routes->group('admin', ['filter' => 'adminAuth'], function ($routes) {
 
     $routes->get('withdrawal-request', 'Admin\Withdrawal::index', ['as' => 'admin_withdrawal_request']);
     $routes->get('accept-reject-withdrawal-request/(:num)/(:num)', 'Admin\Withdrawal::acceptRejectWithdrawal/$1/$2', ['as' => 'admin_accept_reject_withdrawal_request']);
+
+    $routes->get('product', 'Admin\Product::index', ['as' => 'admin_product']);
+    $routes->match(['get', 'post'], 'product-add', 'Admin\Product::add', ['as' => 'admin_product_add']);
+    $routes->match(['get', 'post'], 'product-edit/(:num)', 'Admin\Product::edit/$1', ['as' => 'admin_product_edit']);
+    $routes->get('products-delete/(:num)', 'Admin\Product::delete/$1',['as' => 'admin_product_delete']);
 });
 
 

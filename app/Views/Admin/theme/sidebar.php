@@ -25,6 +25,12 @@
                         </a>
                     </li>
                     <li class="nk-menu-item">
+                        <a href="<?= url_to('admin_product') ?>" class="nk-menu-link">
+                            <span class="nk-menu-icon"><em class="icon ni ni-home"></em></span>
+                            <span class="nk-menu-text">Product</span>
+                        </a>
+                    </li>
+                    <li class="nk-menu-item">
                         <a href="<?= url_to('admin_user_list') ?>" class="nk-menu-link">
                             <span class="nk-menu-icon"><em class="icon ni ni-home"></em></span>
                             <span class="nk-menu-text">User List</span>

@@ -9,9 +9,34 @@ class Home extends BaseController
     public function index(): string
     {
         $productModel = new ProductModel();
-        $data['product'] = $productModel->where('status', 'active')->first();
-
+        $data['product'] = $productModel->where('status', 'active')->findAll();
+        
         return view('Frontend/index',$data);
+    }
+    
+    public function aboutUs()
+    {
+        return view('Frontend/about-us');
+    }
+    
+    public function faq()
+    {
+        return view('Frontend/faq');
+    }
+    
+    public function termsConditions()
+    {
+        return view('Frontend/terms-conditions');
+    }
+
+    public function privacyPolicy()
+    {
+        return view('Frontend/privacy-policy');
+    }
+    
+    public function contactUs()
+    {
+        return view('Frontend/privacy-policy');
     }
 
     public function contactSave()

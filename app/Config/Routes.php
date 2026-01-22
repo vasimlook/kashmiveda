@@ -6,6 +6,12 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 $routes->get('/', 'Home::index',['as' => 'home']);
+$routes->get('about-us', 'Home::aboutUs',['as' => 'about_us']);
+$routes->get('contact-us', 'Home::contactUs',['as' => 'contact_us']);
+$routes->get('faq', 'Home::faq',['as' => 'faq']);
+$routes->get('terms-conditions', 'Home::termsConditions',['as' => 'terms_conditions']);
+$routes->get('privacy-policy', 'Home::privacyPolicy',['as' => 'privacy_policy']);
+$routes->get('product-details/(:any)', 'Product::details/$1',['as' => 'product_details']);
 $routes->post('contact-save', 'Home::contactSave',['as' => 'contact_save']);
 
 $routes->group('admin', function ($routes) {
